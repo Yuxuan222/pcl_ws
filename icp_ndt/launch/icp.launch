@@ -1,0 +1,10 @@
+<launch>
+    
+    <node pkg="pcd_load_filter" type="pcd_load_filter" name="pcd_load_filter" output="screen">
+        <param name="pcd_file" value="$(find pcd_load_filter)/data/example.pcd"/>
+        <param name="filter_threshold" value="0.5"/>
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(find pcd_load_filter)/rviz/pcd_load_filter.rviz"/>
+
+</launch>
